@@ -1,21 +1,38 @@
+/* src/app/globals.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* --- Tus definiciones de @keyframes deben ir AQUÍ --- */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes scroll-left {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left var(--scroll-speed, 60s) linear infinite;
+  white-space: nowrap;
+}
+
+.animate-scroll-right {
+  animation: scroll-right var(--scroll-speed, 60s) linear infinite;
+  white-space: nowrap;
+}
+.some-custom-class {
+  background-color: blue;
 }
